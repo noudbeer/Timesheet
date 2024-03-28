@@ -19,6 +19,7 @@ services:
 
   database:
     container_name: timesheet-db
+    user: 1000:1000
     image: postgres:latest
     volumes:
       - ./db:/var/lib/postgresql/data
