@@ -4,7 +4,8 @@
   "description": "",
   "workspaces": [
     "packages/api",
-    "packages/common"
+    "packages/common",
+    "packages/mobile-app"
   ],
   "keywords": [],
   "author": "Simon Bernoud",
