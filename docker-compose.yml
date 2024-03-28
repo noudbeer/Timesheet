@@ -1,37 +1,37 @@
 version: "3"
 
 services:
-  app:
-    container_name: timesheet
+  api:
+    container_name: timesheet-api
     image: node:20
     volumes:
-      - ./:/app
+      - ./:/app/
     ports:
       - 3333:3333
-    working_dir: /app
+    working_dir: /app/packages/api
     command: npm run dev
     environment:
-      DB_HOST: timesheetdb
+      DB_HOST: timesheet-db
       DB_PORT: 5432
       DB_USER: admin
       DB_PASSWORD: password
-      DB_DATABASE: timesheetdb
+      DB_DATABASE: timesheet-db
 
   database:
-    container_name: timesheetdb
+    container_name: timesheet-db
     image: postgres:latest
     volumes:
       - ./db:/var/lib/postgresql/data
     ports:
       - 5432:5432
     environment:
-      POSTGRES_DB: timesheetdb
+      POSTGRES_DB: timesheet-db
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
       POSTGRES_HOST_AUTH_METHOD: trust
 
   pgadmin:
-    container_name: timesheetpgadmin
+    container_name: timesheet-pgadmin
     image: dpage/pgadmin4
     ports:
       - 8080:80
