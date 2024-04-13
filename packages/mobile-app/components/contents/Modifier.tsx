@@ -1,11 +1,10 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { Navbar } from './Navbar';
 
-export function Contents() {
+export function Modifier() {
     return (
         <View>
-            <Text>Dashboard</Text>
+            <Text>Modifier</Text>
         </View>
     );
 }
